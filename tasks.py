@@ -2,6 +2,7 @@ from robocorp.tasks import task
 from robocorp import browser
 from RPA.HTTP import HTTP
 from RPA.Excel.Files import Files
+from RPA.PDF import PDF
 
 @task
 def robot_spare_bin_python():
@@ -11,6 +12,7 @@ def robot_spare_bin_python():
     download_excel_file()
     fill_form_with_excel_data()
     collect_results()
+    export_as_pdf()
     log_out()
 
 def open_the_intranet_website():
@@ -49,5 +51,12 @@ def collect_results():
 def log_out():
     page = browser.page()
     page.click("text=Log out")
+
+def export_as_pdf():
+    page = browser.page()
+    sales_results_html = page.locator("#sales-results").inner_html()
+    pdf = PDF()
+    pdf.html_to_pdf(sales_results_html, "output/sales_results.pdf")
+
 
     
