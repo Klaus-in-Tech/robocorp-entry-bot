@@ -5,7 +5,7 @@ from RPA.Excel.Files import Files
 
 @task
 def robot_spare_bin_python():
-    
+    browser.configure(slowmo=100)
     open_the_intranet_website()
     log_in()
     download_excel_file()
@@ -48,6 +48,6 @@ def collect_results():
 
 def log_out():
     page = browser.page()
-    page.click("button:text('LOG OUT')")
+    page.click("text=Log out")
 
     
