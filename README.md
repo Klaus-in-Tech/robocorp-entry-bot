@@ -1,6 +1,6 @@
 # Automation Certification Level I - Robocorp
 
-### Documentation for the create order process use case:<br>
+### Documentation for the use case:<br>
 👉 https://robocorp.com/docs/courses/beginners-course
 
 ## Author
